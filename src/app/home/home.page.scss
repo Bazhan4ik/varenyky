@@ -14,263 +14,394 @@
         bottom: 0;
         width: 280px;
         height: 52px;
-        background-color: rgb(var(--red));
-        border-top-left-radius: 26px;
-        border-top-right-radius: 26px;
-        border: 2px solid white;
-        border-bottom: none;
-        outline: 2px solid rgb(var(--red));
-        padding: 0 24px;
-        color: white;
 
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
 
-        p {
-            margin: 0;
-            font-family: var(--font-button);
-            font-size: 20px;
-            color: white;
-        }
-
-        ion-icon {
-            font-size: 32px;
-            color: white;
-        }
-
-    }
-
-    .border {
-        width: 64px;
-        height: 100%;
-
-        display: flex;
-        flex-direction: column;
-
-        position: fixed;
-        top: 0;
-
-        img {
-            width: 64px;
-            height: auto;
-        }
-
-        &.r {
-            // right: 0;
-            left: calc(50vw + 464px);
-            border-left: 2px solid #fe000a;
-        }
-
-        &.l {
-            // left: 0;
-            right: calc(50vw + 464px);
-            border-right: 2px solid #fe000a;
-
-            img {
-                rotate: 180deg;
-            }
-        }
-    }
-
-    .shop-container {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        padding: 72px 54px;
-    }
-
-    .top {
-        width: 800px;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        height: 30vh;
-
-        .card-wrap {
-            display: flex;
-            align-items: center;
-
-            .card {
-                color: black;
-
-                .titles {
-                    h1 {
-                        font-family: var(--font-title);
-                    }
-
-                    h2 {
-                        font-family: var(--font-subtitle);
-                        font-size: 20px;
-                        color: var(--gray-font);
-                    }
-                }
-
-                .buttons {
-                    margin-top: 32px;
-                    display: flex;
-                    align-items: center;
-                    gap: 12px;
-
-                    .cook {
-                        width: 196px;
-                        height: 52px;
-                        border-radius: 52px;
-                        background-color: rgb(var(--red));
-                        color: white;
-                        font-family: var(--font-button);
-                        font-size: 20px;
-                        border: 2px solid white;
-                        // outline: 2px solid rgb(var(--red));
-                        text-decoration: none;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        position: relative;
-
-                        &::before {
-                            content: "";
-                            position: absolute;
-                            top: -4px; // border: 2px + offset: 2px
-                            right: -4px; // border: 2px + offset: 2px
-                            bottom: -4px; // border: 2px + offset: 2px
-                            left: -4px; // border: 2px + offset: 2px
-                            border: 2px solid rgb(var(--red));
-                            border-radius: 52px; // border—radius: 6px + offset: 1px
-                        }
-                    }
-
-                    .cart {
-                        width: 52px;
-                        height: 52px;
-                        background-color: rgb(var(--red));
-                        border-radius: 100%;
-                        border: 2px solid white;
-                        position: relative;
-                        // outline: 2px solid rgb(var(--red));
-
-                        &::before {
-                            content: "";
-                            position: absolute;
-                            top: -4px; // border: 2px + offset: 2px
-                            right: -4px; // border: 2px + offset: 2px
-                            bottom: -4px; // border: 2px + offset: 2px
-                            left: -4px; // border: 2px + offset: 2px
-                            border: 2px solid rgb(var(--red));
-                            border-radius: 100%; // border—radius: 6px + offset: 1px
-                        }
-
-                        ion-icon {
-                            color: white;
-                            font-size: 26px;
-                        }
-                    }
-                }
-            }
-        }
-
-        .image-wrap {
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-
-            img {
-                width: 264px;
-                height: auto;
-                animation: vibrate 2s infinite;
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                z-index: 10;
-            }
-
-            .circle {
-                width: 182px;
-                height: 182px;
-                background-color: rgb(242, 242, 242);
-                border-radius: 100%;
-                position: absolute;
-                top: 45%;
-                left: 45%;
-
-                &.red {
-                    background-color: rgba(var(--red), 0.5);
-
-                    &.c1 {
-                        width: 52px;
-                        height: 52px;
-                        top: 20px;
-                        left: 20px;
-                        animation: circleAnimationSides 2s infinite ease-in-out;
-                    }
-
-                    &.c2 {
-                        width: 64px;
-                        height: 64px;
-                        bottom: 60px;
-                        right: 30px;
-                        top: unset;
-                        left: unset;
-                        animation: circleAnimationUpDown 3s infinite ease-in-out;
-                    }
-
-                    &.c3 {
-                        width: 72px;
-                        height: 72px;
-                        bottom: 0px;
-                        left: 30px;
-                        top: unset;
-                        animation: circleAnimationUpDownSides 4s infinite ease-in-out;
-                    }
-                }
-            }
-        }
-    }
-
-    .tabs {
-        margin-top: 124px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 24px;
 
         button {
-            color: black;
-            background: white;
-            font-family: var(--font-button);
-            font-size: 18px;
-            height: 52px;
-            width: 164px;
-            border: 2px solid rgb(var(--red));
-            border-radius: 12px;
             position: relative;
+            width: 280px;
+            height: 52px;
+            background-color: rgb(var(--red));
+            border-top-left-radius: 26px;
+            border-top-right-radius: 26px;
+            border: 2px solid white;
+            border-bottom: none;
+            // outline: 2px solid rgb(var(--red));
+            padding: 0 24px;
+            color: white;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            p {
+                margin: 0;
+                font-family: var(--font-button);
+                font-size: 20px;
+                color: white;
+            }
+
+            ion-icon {
+                font-size: 32px;
+                color: white;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: -4px;
+                right: -4px;
+                bottom: -4px;
+                left: -4px;
+                border: 2px solid rgb(var(--red));
+                border-top-left-radius: 26px;
+                border-top-right-radius: 26px;
+            }
+        }
+    }
+}
+
+.border {
+    width: 64px;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    position: fixed;
+    top: 0;
+
+    img {
+        width: 64px;
+        height: auto;
+    }
+
+    &.r {
+        // right: 0;
+        left: calc(50vw + 464px);
+        border-left: 2px solid #fe000a;
+    }
+
+    &.l {
+        // left: 0;
+        right: calc(50vw + 464px);
+        border-right: 2px solid #fe000a;
+
+        img {
+            rotate: 180deg;
+        }
+    }
+}
+
+.shop-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 72px 54px;
+}
+
+.top {
+    width: 800px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 30vh;
+
+    .card-wrap {
+        display: flex;
+        align-items: center;
+
+        .card {
+            color: black;
+
+            .titles {
+                h1 {
+                    font-family: var(--font-title);
+                }
+
+                h2 {
+                    font-family: var(--font-subtitle);
+                    font-size: 20px;
+                    color: var(--gray-font);
+                }
+            }
+
+            .buttons {
+                margin-top: 32px;
+                display: flex;
+                align-items: center;
+                gap: 12px;
+
+                .cook {
+                    width: 196px;
+                    height: 52px;
+                    border-radius: 52px;
+                    background-color: rgb(var(--red));
+                    color: white;
+                    font-family: var(--font-button);
+                    font-size: 20px;
+                    border: 2px solid white;
+                    // outline: 2px solid rgb(var(--red));
+                    text-decoration: none;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: relative;
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        top: -4px; // border: 2px + offset: 2px
+                        right: -4px; // border: 2px + offset: 2px
+                        bottom: -4px; // border: 2px + offset: 2px
+                        left: -4px; // border: 2px + offset: 2px
+                        border: 2px solid rgb(var(--red));
+                        border-radius: 52px; // border—radius: 6px + offset: 1px
+                    }
+                }
+
+                .cart {
+                    width: 52px;
+                    height: 52px;
+                    background-color: rgb(var(--red));
+                    border-radius: 100%;
+                    border: 2px solid white;
+                    position: relative;
+                    // outline: 2px solid rgb(var(--red));
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        top: -4px; // border: 2px + offset: 2px
+                        right: -4px; // border: 2px + offset: 2px
+                        bottom: -4px; // border: 2px + offset: 2px
+                        left: -4px; // border: 2px + offset: 2px
+                        border: 2px solid rgb(var(--red));
+                        border-radius: 100%; // border—radius: 6px + offset: 1px
+                    }
+
+                    ion-icon {
+                        color: white;
+                        font-size: 26px;
+                    }
+                }
+            }
+        }
+    }
+
+    .image-wrap {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+
+        img {
+            width: 264px;
+            height: auto;
+            animation: vibrate 2s infinite;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+        }
+
+        .circle {
+            width: 182px;
+            height: 182px;
+            background-color: rgb(242, 242, 242);
+            border-radius: 100%;
+            position: absolute;
+            top: 45%;
+            left: 45%;
+
+            &.red {
+                background-color: rgba(var(--red), 0.5);
+
+                &.c1 {
+                    width: 52px;
+                    height: 52px;
+                    top: 20px;
+                    left: 20px;
+                    animation: circleAnimationSides 2s infinite ease-in-out;
+                }
+
+                &.c2 {
+                    width: 64px;
+                    height: 64px;
+                    bottom: 60px;
+                    right: 30px;
+                    top: unset;
+                    left: unset;
+                    animation: circleAnimationUpDown 3s infinite ease-in-out;
+                }
+
+                &.c3 {
+                    width: 72px;
+                    height: 72px;
+                    bottom: 0px;
+                    left: 30px;
+                    top: unset;
+                    animation: circleAnimationUpDownSides 4s infinite ease-in-out;
+                }
+            }
+        }
+    }
+}
+
+.tabs {
+    margin-top: 124px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+
+    button {
+        color: black;
+        background: white;
+        font-family: var(--font-button);
+        font-size: 18px;
+        height: 52px;
+        width: 164px;
+        border: 2px solid rgb(var(--red));
+        border-radius: 12px;
+        position: relative;
+
+        &.left {
+            border-top-left-radius: 52px;
+
+            &.selected::before {
+                border-top-left-radius: 51px;
+            }
+        }
+
+        &.right {
+            border-top-right-radius: 52px;
+
+            &.selected::before {
+                border-top-right-radius: 51px;
+            }
+        }
+
+        &.selected {
+            background: rgb(var(--red));
+            border: 2px solid white;
+            // outline: 2px solid rgb(var(--red));
+            color: white;
+        }
+
+        &.selected::before {
+            content: "";
+            position: absolute;
+            top: -4px; // border: 2px + offset: 2px
+            right: -4px; // border: 2px + offset: 2px
+            bottom: -4px; // border: 2px + offset: 2px
+            left: -4px; // border: 2px + offset: 2px
+            border: 2px solid rgb(var(--red));
+            border-radius: 12px; // border—radius: 6px + offset: 1px
 
             &.left {
                 border-top-left-radius: 52px;
-
-                &.selected::before {
-                    border-top-left-radius: 51px;
-                }
             }
 
             &.right {
                 border-top-right-radius: 52px;
+            }
+        }
+    }
+}
 
-                &.selected::before {
-                    border-top-right-radius: 51px;
+.products {
+    margin-top: 52px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    width: 800px;
+    padding-bottom: 150px;
+
+    .product {
+        margin-top: 24px;
+        width: 100%;
+        padding: 16px;
+        box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+        position: relative;
+        border-radius: 24px;
+
+        .title {
+            p {
+                margin: 0;
+                color: black;
+                font-family: var(--font-button);
+                font-size: 20px;
+            }
+        }
+
+        .icons {
+            padding: 8px 0;
+            display: flex;
+            align-items: center;
+            color: black;
+            font-size: 30px;
+            gap: 8px;
+
+            img {
+                width: 38px;
+                height: 38px;
+            }
+        }
+
+        .description {
+            display: flex;
+
+            p {
+                color: gray;
+                font-family: var(--font-subtitle);
+                margin: 6px 0;
+                font-size: 14px;
+            }
+        }
+
+        .circle-container {
+            position: absolute;
+            top: -32px;
+            right: 32px;
+            height: 62px;
+            width: 62px;
+
+
+            &.remove {
+                right: 106px;
+                top: -19px;
+                height: 38px;
+                width: 38px;
+
+                button {
+                    height: 38px;
+                    width: 38px;
+
+                    ion-icon {
+                        font-size: 26px;
+                    }
                 }
+
+            }
+        }
+
+        .circle {
+            position: relative;
+            height: 62px;
+            width: 62px;
+            background-color: rgb(var(--red));
+            border-radius: 100%;
+            border: 2px solid white;
+            // outline: 2px solid rgb(var(--red));
+            color: white;
+
+            ion-icon {
+                font-size: 32px;
             }
 
-            &.selected {
-                background: rgb(var(--red));
-                border: 2px solid white;
-                // outline: 2px solid rgb(var(--red));
-                color: white;
-            }
-
-            &.selected::before {
+            &::before {
                 content: "";
                 position: absolute;
                 top: -4px; // border: 2px + offset: 2px
@@ -278,119 +409,7 @@
                 bottom: -4px; // border: 2px + offset: 2px
                 left: -4px; // border: 2px + offset: 2px
                 border: 2px solid rgb(var(--red));
-                border-radius: 12px; // border—radius: 6px + offset: 1px
-
-                &.left {
-                    border-top-left-radius: 52px;
-                }
-
-                &.right {
-                    border-top-right-radius: 52px;
-                }
-            }
-        }
-    }
-
-    .products {
-        margin-top: 52px;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 24px;
-        width: 800px;
-        padding-bottom: 150px;
-
-        .product {
-            margin-top: 24px;
-            width: 100%;
-            padding: 16px;
-            box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
-            position: relative;
-            border-radius: 24px;
-
-            .title {
-                p {
-                    margin: 0;
-                    color: black;
-                    font-family: var(--font-button);
-                    font-size: 20px;
-                }
-            }
-
-            .icons {
-                padding: 8px 0;
-                display: flex;
-                align-items: center;
-                color: black;
-                font-size: 30px;
-                gap: 8px;
-
-                img {
-                    width: 38px;
-                    height: 38px;
-                }
-            }
-
-            .description {
-                display: flex;
-
-                p {
-                    color: gray;
-                    font-family: var(--font-subtitle);
-                    margin: 6px 0;
-                    font-size: 14px;
-                }
-            }
-
-            .circle-container {
-                position: absolute;
-                top: -32px;
-                right: 32px;
-                height: 62px;
-                width: 62px;
-
-
-                &.remove {
-                    right: 106px;
-                    top: -19px;
-                    height: 38px;
-                    width: 38px;
-
-                    button {
-                        height: 38px;
-                        width: 38px;
-
-                        ion-icon {
-                            font-size: 26px;
-                        }
-                    }
-
-                }
-            }
-
-            .circle {
-                position: relative;
-                height: 62px;
-                width: 62px;
-                background-color: rgb(var(--red));
-                border-radius: 100%;
-                border: 2px solid white;
-                // outline: 2px solid rgb(var(--red));
-                color: white;
-
-                ion-icon {
-                    font-size: 32px;
-                }
-
-                &::before {
-                    content: "";
-                    position: absolute;
-                    top: -4px; // border: 2px + offset: 2px
-                    right: -4px; // border: 2px + offset: 2px
-                    bottom: -4px; // border: 2px + offset: 2px
-                    left: -4px; // border: 2px + offset: 2px
-                    border: 2px solid rgb(var(--red));
-                    border-radius: 100%; // border—radius: 6px + offset: 1px
-                }
+                border-radius: 100%; // border—radius: 6px + offset: 1px
             }
         }
     }

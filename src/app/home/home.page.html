@@ -67,10 +67,12 @@
 
     </div>
 
-    <button (click)="openCart()" id="cart">
-        <p>{{ selected.length }} packs selected</p>
-        <ion-icon name="chevron-up-outline"></ion-icon>
-    </button>
+    <div id="cart">
+        <button (click)="openCart()">
+            <p>{{ selected.length }} packs selected</p>
+            <ion-icon name="chevron-up-outline"></ion-icon>
+        </button>
+    </div>
 
     <div class="border r">
         <img src="./../../assets/borders/border.jpeg" alt="border">
