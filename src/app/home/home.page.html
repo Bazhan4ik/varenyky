@@ -41,12 +41,16 @@
 
         <div class="products">
             <div class="product" *ngFor="let product of showProducts">
-                <button (click)="add(product)" class="circle">
-                    <ion-icon name="add-outline"></ion-icon>
-                </button>
-                <button *ngIf="includes(product.id)" (click)="remove(product.id)" class="circle remove">
-                    <ion-icon name="remove-outline"></ion-icon>
-                </button>
+                <div class="circle-container">
+                    <button (click)="add(product)" class="circle">
+                        <ion-icon name="add-outline"></ion-icon>
+                    </button>
+                </div>
+                <div class="circle-container remove">
+                    <button *ngIf="includes(product.id)" (click)="remove(product.id)" class="circle remove">
+                        <ion-icon name="remove-outline"></ion-icon>
+                    </button>
+                </div>
                 <div class="title">
                     <p>{{ product.name }}</p>
                 </div>

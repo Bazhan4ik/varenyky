@@ -5,6 +5,7 @@
     display: flex;
     justify-content: center;
     overflow-y: auto;
+    overflow-x: hidden;
 
 
     #cart {
@@ -20,6 +21,7 @@
         border-bottom: none;
         outline: 2px solid rgb(var(--red));
         padding: 0 24px;
+        color: white;
 
         display: flex;
         align-items: center;
@@ -29,10 +31,12 @@
             margin: 0;
             font-family: var(--font-button);
             font-size: 20px;
+            color: white;
         }
 
         ion-icon {
             font-size: 32px;
+            color: white;
         }
 
     }
@@ -116,11 +120,23 @@
                         font-family: var(--font-button);
                         font-size: 20px;
                         border: 2px solid white;
-                        outline: 2px solid rgb(var(--red));
+                        // outline: 2px solid rgb(var(--red));
                         text-decoration: none;
                         display: flex;
                         align-items: center;
                         justify-content: center;
+                        position: relative;
+
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            top: -4px; // border: 2px + offset: 2px
+                            right: -4px; // border: 2px + offset: 2px
+                            bottom: -4px; // border: 2px + offset: 2px
+                            left: -4px; // border: 2px + offset: 2px
+                            border: 2px solid rgb(var(--red));
+                            border-radius: 52px; // border—radius: 6px + offset: 1px
+                        }
                     }
 
                     .cart {
@@ -129,7 +145,19 @@
                         background-color: rgb(var(--red));
                         border-radius: 100%;
                         border: 2px solid white;
-                        outline: 2px solid rgb(var(--red));
+                        position: relative;
+                        // outline: 2px solid rgb(var(--red));
+
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            top: -4px; // border: 2px + offset: 2px
+                            right: -4px; // border: 2px + offset: 2px
+                            bottom: -4px; // border: 2px + offset: 2px
+                            left: -4px; // border: 2px + offset: 2px
+                            border: 2px solid rgb(var(--red));
+                            border-radius: 100%; // border—radius: 6px + offset: 1px
+                        }
 
                         ion-icon {
                             color: white;
@@ -217,20 +245,48 @@
             width: 164px;
             border: 2px solid rgb(var(--red));
             border-radius: 12px;
+            position: relative;
 
             &.left {
                 border-top-left-radius: 52px;
+
+                &.selected::before {
+                    border-top-left-radius: 51px;
+                }
             }
 
             &.right {
                 border-top-right-radius: 52px;
+
+                &.selected::before {
+                    border-top-right-radius: 51px;
+                }
             }
 
             &.selected {
                 background: rgb(var(--red));
                 border: 2px solid white;
-                outline: 2px solid rgb(var(--red));
+                // outline: 2px solid rgb(var(--red));
                 color: white;
+            }
+
+            &.selected::before {
+                content: "";
+                position: absolute;
+                top: -4px; // border: 2px + offset: 2px
+                right: -4px; // border: 2px + offset: 2px
+                bottom: -4px; // border: 2px + offset: 2px
+                left: -4px; // border: 2px + offset: 2px
+                border: 2px solid rgb(var(--red));
+                border-radius: 12px; // border—radius: 6px + offset: 1px
+
+                &.left {
+                    border-top-left-radius: 52px;
+                }
+
+                &.right {
+                    border-top-right-radius: 52px;
+                }
             }
         }
     }
@@ -285,31 +341,55 @@
                 }
             }
 
-            .circle {
+            .circle-container {
                 position: absolute;
                 top: -32px;
                 right: 32px;
                 height: 62px;
                 width: 62px;
+
+
+                &.remove {
+                    right: 106px;
+                    top: -19px;
+                    height: 38px;
+                    width: 38px;
+
+                    button {
+                        height: 38px;
+                        width: 38px;
+
+                        ion-icon {
+                            font-size: 26px;
+                        }
+                    }
+
+                }
+            }
+
+            .circle {
+                position: relative;
+                height: 62px;
+                width: 62px;
                 background-color: rgb(var(--red));
                 border-radius: 100%;
                 border: 2px solid white;
-                outline: 2px solid rgb(var(--red));
+                // outline: 2px solid rgb(var(--red));
                 color: white;
 
                 ion-icon {
                     font-size: 32px;
                 }
 
-                &.remove {
-                    height: 38px;
-                    width: 38px;
-                    right: 106px;
-                    top: -19px;
-
-                    ion-icon {
-                        font-size: 26px;
-                    }
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: -4px; // border: 2px + offset: 2px
+                    right: -4px; // border: 2px + offset: 2px
+                    bottom: -4px; // border: 2px + offset: 2px
+                    left: -4px; // border: 2px + offset: 2px
+                    border: 2px solid rgb(var(--red));
+                    border-radius: 100%; // border—radius: 6px + offset: 1px
                 }
             }
         }
