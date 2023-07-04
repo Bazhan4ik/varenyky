@@ -166,11 +166,21 @@
                 font-family: var(--font-button);
                 font-size: 16px;
                 border-radius: 42px;
-                outline: 2px solid rgb(var(--red));
                 border: 2px solid white;
                 color: white;
                 background: rgb(var(--red));
                 margin-left: 8px;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: -4px;
+                    right: -4px;
+                    bottom: -4px;
+                    left: -4px;
+                    border: 2px solid rgb(var(--red));
+                    border-radius: 42px;
+                }
             }
         }
     }
