@@ -1,0 +1,66 @@
+<div class="app" (mousedown)="close()">
+    <div class="box" (mousedown)="$event.stopPropagation()">
+        <div class="header">
+            <div class="title">
+                <p>Almost there...</p>
+            </div>
+            <div class="buttons">
+                <button (click)="close()">
+                    <ion-icon name="close"></ion-icon>
+                </button>
+            </div>
+        </div>
+
+
+
+        <div class="inpt name">
+            <div class="label">
+                <p>Your Name</p>
+            </div>
+            <input type="text" name="name" placeholder="Your Name" [(ngModel)]="name">
+        </div>
+        <div class="phone">
+            <div class="prefix">
+                <p>+1</p>
+            </div>
+            <input [(ngModel)]="phone" (input)="onPhoneInput($event)" placeholder="(000)-000-0000" type="tel"
+                inputmode="numeric">
+        </div>
+
+        <div class="order-type">
+            <select [(ngModel)]="type">
+                <option value="delivery">Delivery</option>
+                <option value="pickup">Pick-up</option>
+            </select>
+        </div>
+
+        <div *ngIf="type == 'pickup'" class="pickup-address">
+            <p>Pickup at Niagra on the Lake, some address 33</p>
+        </div>
+
+        <div *ngIf="type == 'delivery'" class="delivery-address">
+            <div class="inpt">
+                <div class="label">
+                    <p>City</p>
+                </div>
+                <input class="city" type="text" name="city" placeholder="City" [(ngModel)]="city" disabled>
+            </div>
+            <div class="inpt">
+                <div class="label">
+                    <p>Address</p>
+                </div>
+                <input class="address" type="text" name="address" placeholder="Address" [(ngModel)]="address">
+            </div>
+            <div class="inpt">
+                <div class="label">
+                    <p>Unit (optional)</p>
+                </div>
+                <input class="unit" type="text" name="unit" placeholder="Unit (optional)" [(ngModel)]="unit">
+            </div>
+        </div>
+
+        <div class="buttons">
+            <button (click)="submit()">Place order</button>
+        </div>
+    </div>
+</div>

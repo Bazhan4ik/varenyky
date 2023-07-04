@@ -1,0 +1,142 @@
+.app {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 20vh;
+    z-index: 100;
+
+    .box {
+        max-width: 512px;
+        width: 100vw;
+        background-color: white;
+        border-radius: 24px;
+        padding: 24px;
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .title {
+                p {
+                    color: black;
+                    font-family: var(--font-title);
+                    font-size: 20px;
+                    margin: 0;
+                }
+            }
+
+            .buttons {
+                button {
+                    width: 32px;
+                    height: 32px;
+                    border-radius: 100%;
+                    background: none;
+
+                    ion-icon {
+                        font-size: 24px;
+                        color: black;
+                    }
+                }
+            }
+        }
+
+        .label {
+            margin-top: 12px;
+
+            p {
+                color: black;
+                font-family: var(--font-subtitle);
+                font-size: 17px;
+                color: var(--gray-font);
+                margin: 0;
+            }
+        }
+
+        .types {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 8px;
+
+            button {
+                height: 42px;
+                width: auto;
+                padding: 0 10px;
+                font-family: var(--font-button);
+                font-size: 16px;
+                border-radius: 42px;
+                border: 2px solid rgb(var(--red));
+                color: black;
+                background: white;
+
+                &.selected {
+                    outline: 2px solid rgb(var(--red));
+                    border: 2px solid white;
+                    color: white;
+                    background: rgb(var(--red));
+                }
+            }
+        }
+
+        .amounts {
+            display: flex;
+            align-items: center;
+            margin-top: 8px;
+            gap: 12px;
+
+            button {
+                height: 42px;
+                width: 42px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-family: var(--font-button);
+                font-size: 16px;
+                border-radius: 42px;
+                border: 2px solid rgb(var(--red));
+                color: black;
+                background: white;
+
+                &.selected {
+                    outline: 2px solid rgb(var(--red));
+                    border: 2px solid white;
+                    color: white;
+                    background: rgb(var(--red));
+                }
+            }
+        }
+
+        .submit {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+
+            div>p {
+                color: gray;
+                font-size: 14px;
+                font-family: var(--font-subtitle);
+            }
+
+            button {
+                height: 42px;
+                width: auto;
+                padding: 0 10px;
+                font-family: var(--font-button);
+                font-size: 16px;
+                border-radius: 42px;
+                outline: 2px solid rgb(var(--red));
+                border: 2px solid white;
+                color: white;
+                background: rgb(var(--red));
+                margin-left: 8px;
+            }
+        }
+    }
+}

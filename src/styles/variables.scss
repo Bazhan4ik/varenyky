@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins:wght@700&family=Roboto+Condensed&family=Public+Sans:wght@700&display=swap');
+
+:root {
+
+
+    --blue: #87CEEB;
+    --green: #90EE90;
+    --orange: #F4D738;
+    --red: 254, 76, 76;
+    // --red: 255, 122, 92;
+    --pink: #FFB2EF;
+    --purple: #A388EE;
+
+    --background: #F8D6B3;
+    --on-background: var(--red);
+
+    --shadow: 4px 4px 0px 0px rgba(0, 0, 0, 1);
+
+    --font-title: 'Poppins', sans-serif;
+    --font-subtitle: 'Roboto Mono', monospace;
+    --font-button: 'Public Sans', sans-serif;
+    --font-card: 'Montserrat', sans-serif;
+
+    --gray-font: rgb(85, 85, 85);
+
+}

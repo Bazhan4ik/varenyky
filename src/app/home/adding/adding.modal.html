@@ -1,0 +1,43 @@
+<div class="app" (mousedown)="close()">
+    <div class="box" (mousedown)="$event.stopPropagation()">
+        <div class="header">
+            <div class="title">
+                <p>Select amount...</p>
+            </div>
+            <div class="buttons">
+                <button (click)="close()">
+                    <ion-icon name="close"></ion-icon>
+                </button>
+            </div>
+        </div>
+        <!-- <div class="label">
+            <p>Select style</p>
+        </div>
+        <div class="types">
+            <button [class.selected]="type == 'traditional'" (click)="selectStyle('traditional')">Traditional</button>
+            <button [class.selected]="type == 'american'" (click)="selectStyle('american')">American</button>
+        </div>
+        <div class="label">
+            <p>Select amount</p>
+        </div> -->
+        <div class="amounts">
+            <button [class.selected]="amount == 12" (click)="selectAmount(12)">12</button>
+            <button [class.selected]="amount == 24" (click)="selectAmount(24)">24</button>
+            <button [class.selected]="amount == 36" (click)="selectAmount(36)">36</button>
+            <button [class.selected]="amount == 48" (click)="selectAmount(48)">48</button>
+        </div>
+
+        <div class="submit">
+            <div class="amount">
+                <p>{{ name }}</p>
+            </div>
+            <div class="amount">
+                <p>, {{ amount }} pcs</p>
+            </div>
+            <div class="price">
+                <p>, ${{ amount }}</p>
+            </div>
+            <button (click)="submit()">Submit</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,46 @@
+<div class="app" (mousedown)="close()">
+    <div class="box" (mousedown)="$event.stopPropagation()">
+        <div class="header">
+            <div class="title">
+                <p>You've selected...</p>
+            </div>
+            <div class="buttons">
+                <button (click)="close()">
+                    <ion-icon name="close"></ion-icon>
+                </button>
+            </div>
+        </div>
+
+
+        <div class="products">
+            <div *ngFor="let product of products" class="product">
+                <div class="name">
+                    <p>{{ product.name }}</p>
+                </div>
+                <div class="amounts">
+                    <button (click)="selectAmount(product, 12)" [class.selected]="product.amount == 12">12</button>
+                    <button (click)="selectAmount(product, 24)" [class.selected]="product.amount == 24">24</button>
+                    <button (click)="selectAmount(product, 36)" [class.selected]="product.amount == 36">36</button>
+                    <button (click)="selectAmount(product, 42)" [class.selected]="product.amount == 42">42</button>
+                </div>
+                <div class="price">
+                    <p>${{ product.amount }}</p>
+                </div>
+                <div class="remove">
+                    <button (click)="remove(product)"><ion-icon name="remove"></ion-icon></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="buttons">
+            <button (click)="submit()">Submit</button>
+        </div>
+
+
+
+
+
+
+
+    </div>
+</div>

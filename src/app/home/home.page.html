@@ -1,20 +1,82 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<div class="app">
+    <div class="border l">
+        <img src="./../../assets/borders/border.jpeg" alt="border">
+        <img src="./../../assets/borders/border.jpeg" alt="border">
+        <img src="./../../assets/borders/border.jpeg" alt="border">
+        <img src="./../../assets/borders/border.jpeg" alt="border">
+        <img src="./../../assets/borders/border.jpeg" alt="border">
+        <img src="./../../assets/borders/border.jpeg" alt="border">
+        <img src="./../../assets/borders/border.jpeg" alt="border">
+    </div>
+    <div class="shop-container">
+        <div class="top">
+            <div class="card-wrap">
+                <div class="card">
+                    <div class="titles">
+                        <h1>Varenyky for dinner?</h1>
+                        <h2>You can cook delicious varenyky in just 10 minutes!</h2>
+                    </div>
+                    <div class="buttons">
+                        <a class="cook" routerLink="/cook">How to cook</a>
+                        <button class="cart" (click)="openCart()">
+                            <ion-icon name="cart-outline"></ion-icon>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="image-wrap">
+                <img src="./../../assets/images/header-plate.png" alt="plate">
+                <div class="circle"></div>
+                <div class="circle red c1"></div>
+                <div class="circle red c2"></div>
+                <div class="circle red c3"></div>
+            </div>
+        </div>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+        <div class="tabs">
+            <button class="left" [class.selected]="tab == 'traditional'"
+                (click)="selectTab('traditional')">Traditional</button>
+            <button class="right" [class.selected]="tab == 'american'" (click)="selectTab('american')">American</button>
+        </div>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
-</ion-content>
+        <div class="products">
+            <div class="product" *ngFor="let product of showProducts">
+                <button (click)="add(product)" class="circle">
+                    <ion-icon name="add-outline"></ion-icon>
+                </button>
+                <button *ngIf="includes(product.id)" (click)="remove(product.id)" class="circle remove">
+                    <ion-icon name="remove-outline"></ion-icon>
+                </button>
+                <div class="title">
+                    <p>{{ product.name }}</p>
+                </div>
+                <div class="description">
+                    <p>
+                        {{ product.description }}
+                    </p>
+                </div>
+                <div class="icons">
+                    <img *ngFor="let emoji of product.icons" src="./../../assets/emoji/{{emoji}}.png" alt="">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <button (click)="openCart()" id="cart">
+        <p>{{ selected.length }} packs selected</p>
+        <ion-icon name="chevron-up-outline"></ion-icon>
+    </button>
+
+    <div class="border r">
+        <img src="./../../assets/borders/border.jpeg" alt="border">
+        <img src="./../../assets/borders/border.jpeg" alt="border">
+        <img src="./../../assets/borders/border.jpeg" alt="border">
+        <img src="./../../assets/borders/border.jpeg" alt="border">
+        <img src="./../../assets/borders/border.jpeg" alt="border">
+        <img src="./../../assets/borders/border.jpeg" alt="border">
+        <img src="./../../assets/borders/border.jpeg" alt="border">
+    </div>
+</div>
+
+<ng-container #modalContainer></ng-container>
