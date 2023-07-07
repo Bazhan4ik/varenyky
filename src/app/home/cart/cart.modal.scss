@@ -143,6 +143,12 @@
             justify-content: flex-end;
             margin-top: 52px;
 
+            .total {
+                color: gray;
+                font-family: var(--font-subtitle);
+                margin-right: 8px;
+            }
+
             button {
                 height: 42px;
                 width: auto;

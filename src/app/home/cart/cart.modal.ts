@@ -18,19 +18,27 @@ export class CartModal implements OnInit {
     constructor() { }
 
 
+    total: number = 0;
+
 
     @Input() products: Product[] = [];
     @Output() leave = new EventEmitter();
     @Output() cartChange = new EventEmitter();
 
 
-    ngOnInit() { }
+    ngOnInit() {
+        this.total = 0;
+        for (const p of this.products) {
+            this.total += p.amount == 12 ? 15 : p.amount;
+        }
+    }
 
 
 
     selectAmount(product: Product, amount: number) {
         this.cartChange.emit({ type: "change", id: product.id, amount });
         product.amount = amount;
+        this.ngOnInit();
     }
     remove(product: Product) {
         this.cartChange.emit({ type: "remove", id: product.id });
@@ -40,6 +48,7 @@ export class CartModal implements OnInit {
                 break;
             }
         }
+        this.ngOnInit();
     }
     submit() {
         if (this.products.length == 0) {

@@ -4,80 +4,83 @@ interface Pack {
     description: string;
     id: string;
     type: string;
+    sweet?: boolean;
 }
 
 
 
 export const sets: Pack[] = [
     {
-        icons: ["potato", "cheese", "salt"],
+        icons: ["potato", "cheese"],
         name: "Cheese + Potatoes",
-        description: "Contains potato, old fort cheddar, salt",
+        description: "Ingredients: potato, old fort cheddar, salt",
         id: "cheese-potatoes",
         type: "traditional",
     },
     {
-        icons: ["potato", "mushroom", "butter", "garlic"],
+        icons: ["potato", "mushroom"],
         name: "Potatoes + Mushrooms",
-        description: "Contains potato, champions, butter, garlic powder",
+        description: "Ingredients: potato, champions, butter, garlic powder",
         id: "potatoes-mushrooms",
         type: "traditional",
     },
     {
-        icons: ["potato", "onion", "salt"],
+        icons: ["potato"],
         name: "Potatoes",
-        description: "Contains potato, dill, onion, salt, black pepper",
+        description: "Ingredients: potato, dill, onion, salt, black pepper",
         id: "potatoes",
         type: "traditional",
     },
     {
-        icons: ["potato", "liver", "onion", "salt"],
+        icons: ["potato", "liver"],
         name: "Potatoes + Liver",
-        description: "Contains potato, beef liver, onion powder, salt",
+        description: "Ingredients: potato, beef liver, onion powder, salt",
         id: "potatoes-beef",
         type: "traditional",
     },
     {
-        icons: ["pepperoni", "cheese", "tomato"],
+        icons: ["pepperoni"],
         name: "Pizza Varennyk",
-        description: "Contains pepperoni, mozzarella cheese, old fort cheddar, tomatoes",
+        description: "Ingredients: pepperoni, mozzarella cheese, old fort cheddar, tomatoes",
         id: "pizza-varennyk",
-        type: "american",
+        type: "western",
     },
     {
-        icons: ["cabbage", "onion", "salt"],
+        icons: ["cabbage"],
         name: "Cabbage",
-        description: "Contains cabbage, onion powder, salt",
+        description: "Ingredients: cabbage, onion powder, salt",
         id: "cabbage",
         type: "traditional",
     },
     {
-        icons: ["cabbage", "mushroom", "onion", "garlic"],
+        icons: ["cabbage", "mushroom"],
         name: "Cabbage + Mushrooms",
-        description: "Contains cabbage, champions, onion powder, garlic powder",
+        description: "Ingredients: cabbage, champions, onion powder, garlic powder",
         id: "cabbage-mushrooms",
         type: "traditional",
     },
     {
-        icons: ["cabbage", "liver", "onion"],
+        icons: ["cabbage", "liver"],
         name: "Cabbage + Liver",
-        description: "Contains cabbage, beef liver, onion powder",
+        description: "Ingredients: cabbage, beef liver, onion powder",
         id: "cabbage-liver",
         type: "traditional",
     },
     {
-        icons: ["cherries", "sugar"],
-        name: "Cherries",
-        description: "Contains cherries, brown sugar, almond extract",
+        icons: ["cherries"],
+        name: "Varenyk with Cherries",
+        description: "Ingredients: cherries, brown sugar, almond extract",
         id: "cherries",
-        type: "american",
+        type: "western",
+        sweet: true,
     },
     {
-        icons: ["ricotta", "sugar"],
-        name: "Ricotta",
-        description: "Contains ricotta, brown sugar, vanilla",
+        icons: ["ricotta"],
+        name: "Ricotta Varenyk",
+        description: "Ingredients: ricotta, brown sugar, vanilla",
         id: "ricotta",
-        type: "american",
+        type: "western",
+        sweet: true,
     }
 ];
 

@@ -11,6 +11,7 @@ export class AddingModal implements OnInit {
 
 
     amount: number = 12;
+    price: number = 15;
     type: string = "traditional";
 
 
@@ -34,5 +35,10 @@ export class AddingModal implements OnInit {
     }
     selectAmount(amount: number) {
         this.amount = amount;
+        if (amount == 12) {
+            this.price = 15;
+        } else {
+            this.price = amount;
+        }
     }
 }

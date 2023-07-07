@@ -15,6 +15,7 @@
         bottom: 0;
         width: 280px;
         height: 52px;
+        z-index: 999;
 
 
 
@@ -323,6 +324,22 @@
             box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
             position: relative;
             border-radius: 24px;
+
+            .badge {
+                position: absolute;
+                bottom: 24px;
+                right: 24px;
+                padding: 3px 6px;
+                background-color: #ffedb5;
+                border-radius: 6px;
+
+                p {
+                    margin: 0;
+                    font-size: 14px;
+                    color: #cf9e07;
+                    font-family: var(--font-button);
+                }
+            }
 
             .title {
                 p {

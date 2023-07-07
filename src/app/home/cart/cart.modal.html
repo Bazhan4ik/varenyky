@@ -24,7 +24,8 @@
                     <button (click)="selectAmount(product, 48)" [class.selected]="product.amount == 48">48</button>
                 </div>
                 <div class="price">
-                    <p>${{ product.amount }}</p>
+                    <p *ngIf="product.amount != 12">${{ product.amount }}</p>
+                    <p *ngIf="product.amount == 12">$15</p>
                 </div>
                 <div class="remove">
                     <button (click)="remove(product)"><ion-icon name="remove"></ion-icon></button>
@@ -33,6 +34,9 @@
         </div>
 
         <div class="buttons">
+            <p class="total">
+                Total: ${{ total }}
+            </p>
             <button (click)="submit()">Submit</button>
         </div>
 

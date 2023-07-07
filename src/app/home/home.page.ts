@@ -11,6 +11,7 @@ interface Product {
     icons: string[];
     id: string;
     type: string;
+    sweet?: boolean;
 }
 
 @Component({
