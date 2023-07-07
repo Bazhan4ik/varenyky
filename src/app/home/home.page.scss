@@ -315,7 +315,6 @@
         grid-template-columns: 1fr 1fr;
         gap: 24px;
         width: 800px;
-        padding-bottom: 150px;
 
         .product {
             margin-top: 24px;
@@ -428,6 +427,14 @@
             }
         }
     }
+
+    .qna {
+        width: 100%;
+        height: auto;
+        margin-top: 84px;
+        width: 800px;
+        padding-bottom: 150px;
+    }
 }
 
 @keyframes vibrate {
@@ -499,7 +506,8 @@
     .app {
 
         .top,
-        .products {
+        .products,
+        .qna {
             width: 100vw;
             padding-right: 24px;
             padding-left: 24px;

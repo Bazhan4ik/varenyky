@@ -8,6 +8,8 @@ import { HomePageRoutingModule } from './home-routing.module';
 import { AddingModal } from './adding/adding.modal';
 import { CartModal } from './cart/cart.modal';
 import { SubmitModal } from './submit/submit.modal';
+import { QnaComponent } from '../qna/qna.component';
+import { QnaModule } from '../qna/qna.module';
 
 
 @NgModule({
@@ -15,7 +17,8 @@ import { SubmitModal } from './submit/submit.modal';
         CommonModule,
         FormsModule,
         IonicModule,
-        HomePageRoutingModule
+        HomePageRoutingModule,
+        QnaModule,
     ],
     declarations: [HomePage, AddingModal, CartModal, SubmitModal]
 })
