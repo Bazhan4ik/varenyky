@@ -4,6 +4,7 @@ import { firstValueFrom } from 'rxjs';
 import { AddingModal } from './adding/adding.modal';
 import { CartModal } from './cart/cart.modal';
 import { SubmitModal } from './submit/submit.modal';
+import { CookModal } from './cook/cook.modal';
 
 interface Product {
     name: string;
@@ -59,6 +60,13 @@ export class HomePage implements OnInit {
 
 
 
+    cook() {
+        const component = this.modalContainer.createComponent(CookModal);
+
+        component.instance.leave.subscribe(() => {
+            component.destroy();
+        });
+    }
     orderConfirmation() {
         const component = this.modalContainer.createComponent(SubmitModal);
 

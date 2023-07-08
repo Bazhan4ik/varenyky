@@ -3,13 +3,13 @@
     height: auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 24px;
     position: relative;
+    gap: 12px;
 
     button {
-        border-radius: 48px;
-        background-color: rgb(var(--red));
-        border: 2px solid white;
+        background-color: white;
+        color: black;
+        border: 2px solid rgb(var(--red));
         position: relative;
         height: 52px;
         font-family: var(--font-button);
@@ -18,22 +18,23 @@
         align-items: center;
         justify-content: space-between;
         padding: 0 24px;
-        color: white;
+        border-radius: 48px;
+        outline: none;
 
         ion-icon {
             font-size: 32px;
         }
 
-        &::before {
-            content: "";
-            position: absolute;
-            top: -4px; // border: 2px + offset: 2px
-            right: -4px; // border: 2px + offset: 2px
-            bottom: -4px; // border: 2px + offset: 2px
-            left: -4px; // border: 2px + offset: 2px
-            border: 2px solid rgb(var(--red));
-            border-radius: 64px; // border—radius: 6px + offset: 1px
-        }
+        // &::before {
+        //     content: "";
+        //     position: absolute;
+        //     top: -4px; // border: 2px + offset: 2px
+        //     right: -4px; // border: 2px + offset: 2px
+        //     bottom: -4px; // border: 2px + offset: 2px
+        //     left: -4px; // border: 2px + offset: 2px
+        //     border: 2px solid rgb(var(--red));
+        //     border-radius: 64px; // border—radius: 6px + offset: 1px
+        // }
     }
 }
 
@@ -41,5 +42,39 @@
 @media screen and (max-width: 900px) {
     .app {
         grid-template-columns: 1fr;
+        gap: 0;
+
+        button {
+            border: none;
+            border-radius: unset;
+            background-color: white;
+            color: black;
+            border: 2px solid rgb(var(--red));
+            position: relative;
+            height: 52px;
+            font-family: var(--font-button);
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 24px;
+            border-bottom: none;
+            outline: none;
+
+            &:first-of-type {
+                border-top-left-radius: 24px;
+                border-top-right-radius: 24px;
+            }
+
+            &:last-of-type {
+                border-bottom-left-radius: 24px;
+                border-bottom-right-radius: 24px;
+                border-bottom: 2px solid rgb(var(--red));
+            }
+
+            ion-icon {
+                font-size: 32px;
+            }
+        }
     }
 }

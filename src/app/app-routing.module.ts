@@ -7,10 +7,6 @@ const routes: Routes = [
         loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
     },
     {
-        path: "cook",
-        loadChildren: () => import('./cook/cook.module').then(m => m.CookModule),
-    },
-    {
         path: "**",
         pathMatch: "full",
         redirectTo: ""

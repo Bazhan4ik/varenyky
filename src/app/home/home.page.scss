@@ -15,7 +15,7 @@
         bottom: 0;
         width: 280px;
         height: 52px;
-        z-index: 999;
+        z-index: 15;
 
 
 
@@ -75,6 +75,7 @@
 
         position: fixed;
         top: 0;
+        z-index: 10;
 
         img {
             width: 64px;
@@ -431,7 +432,7 @@
     .qna {
         width: 100%;
         height: auto;
-        margin-top: 84px;
+        margin-top: 180px;
         width: 800px;
         padding-bottom: 150px;
     }

@@ -1,14 +1,10 @@
-import { CommonModule } from '@angular/common';
 import { Component, ComponentRef, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
-import { IonicModule } from '@ionic/angular';
 import { PopoverComponent } from './popover/popover.component';
 
 @Component({
     selector: 'app-qna',
     templateUrl: './qna.component.html',
     styleUrls: ['./qna.component.scss'],
-    // standalone: true,
-    // imports: [CommonModule, IonicModule]
 })
 export class QnaComponent implements OnInit {
     constructor() { };
@@ -46,10 +42,6 @@ export class QnaComponent implements OnInit {
             answer: "Wheat flour, water, butter, sour cream, and salt.",
         },
         {
-            title: "How to cook?",
-            answer: "You can either boil them or fry them! Here is the instruction (link)",
-        },
-        {
             title: "Thawe before cooking?",
             answer: "Not necessary. You can cook them right away, just a few minutes longer.",
         },
@@ -67,7 +59,9 @@ export class QnaComponent implements OnInit {
     ngOnInit() { }
 
 
+    cook() {
 
+    }
     open(index: number, event: Event) {
 
         let target = event.target as HTMLButtonElement;
