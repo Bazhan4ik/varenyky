@@ -84,5 +84,9 @@ export class QnaComponent implements OnInit {
 
         this.currentPopover.instance.position = { left: target.offsetLeft, width: target.offsetWidth, top: target.offsetTop };
 
+        this.currentPopover.instance.leave.subscribe(() => {
+            this.currentPopover.destroy();
+            this.currentPopover = undefined!;
+        });
     }
 }

@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 
 @Component({
     selector: 'app-popover',
@@ -14,7 +14,7 @@ export class PopoverComponent implements OnInit, AfterViewInit {
     @Input() position!: { width: number; left: number; top: number; };
 
     @ViewChild("popover") popover!: ElementRef<HTMLDivElement>
-
+    @Output() leave = new EventEmitter();
 
 
 
@@ -30,5 +30,7 @@ export class PopoverComponent implements OnInit, AfterViewInit {
 
 
 
-
+    close() {
+        this.leave.emit();
+    }
 }
