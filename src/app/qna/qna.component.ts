@@ -26,8 +26,8 @@ export class QnaComponent implements OnInit {
             answer: "We located in beautiful Niagara-on-the-Lake",
         },
         {
-            title: "Delivery to other towns?",
-            answer: "They can be delivered to St. Catherine's by prior arrangement.",
+            title: "Can you deliver?",
+            answer: "Yes, we deliver them in NOTL and also can deliver to other towns in the Niagara Region by prior arrangement. The delivery fee varies.",
         },
         {
             title: "Are they gluten-free?",
@@ -47,7 +47,7 @@ export class QnaComponent implements OnInit {
         },
         {
             title: "How can I contact you?",
-            answer: "You can call us at +380971234567 or send us an email at support@email.com"
+            answer: "Phone number: +1 (289) 968 8603, email address: varenyky.onthelake@gmail.com"
         }
     ];
 

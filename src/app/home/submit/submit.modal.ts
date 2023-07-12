@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { firstValueFrom } from 'rxjs';
 
 @Component({
     selector: 'app-submit',
@@ -6,7 +8,9 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
     styleUrls: ['./submit.modal.scss'],
 })
 export class SubmitModal implements OnInit {
-    constructor() { }
+    constructor(
+        private http: HttpClient,
+    ) { }
 
 
     type: "delivery" | "pickup" = "pickup";
@@ -80,8 +84,35 @@ export class SubmitModal implements OnInit {
             this.phone = value.slice(0, 14);
         }
     }
-    submit() {
-        console.log(this.phone, this.type, this.city, this.unit, this.address);
+    async submit() {
+        console.log(this.phone, this.type, this.city, this.unit, this.address, this.name);
+
+        if (!this.phone || this.phone.length != 14 || !this.name) {
+            return;
+        }
+
+        if (this.type == "delivery") {
+            if (!this.address || !this.city) {
+                return;
+            }
+
+            const result: any = await firstValueFrom(
+                this.http.post("/api/orders/submit", { address: this.address, unit: this.unit, city: this.city, phone: this.phone, name: this.name, type: "delivery" })
+            );
+
+            if (result.success) {
+                this.leave.emit(true);
+            }
+        } else {
+            const result: any = await firstValueFrom(
+                this.http.post("/api/orders/submit", { phone: this.phone, name: this.name, type: "pickup" })
+            );
+
+            if (result.success) {
+                this.leave.emit(true);
+            }
+        }
+
     }
     close() {
         this.leave.emit();

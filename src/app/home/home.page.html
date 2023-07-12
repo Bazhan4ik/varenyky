@@ -43,14 +43,15 @@
         <div class="tabs">
             <button class="left" [class.selected]="tab == 'traditional'"
                 (click)="selectTab('traditional')">Traditional</button>
-            <button class="right" [class.selected]="tab == 'western'" (click)="selectTab('western')">Western</button>
+            <button class="middle" [class.selected]="tab == 'western'" (click)="selectTab('western')">Western</button>
+            <button class="right" [class.selected]="tab == 'sweet'" (click)="selectTab('sweet')">Sweet</button>
         </div>
 
         <div class="products">
             <div class="product" *ngFor="let product of showProducts">
-                <div *ngIf="product.sweet" class="badge">
+                <!-- <div *ngIf="product.sweet" class="badge">
                     <p>Sweet</p>
-                </div>
+                </div> -->
                 <div class="circle-container">
                     <button (click)="add(product)" class="circle">
                         <ion-icon name="add-outline"></ion-icon>

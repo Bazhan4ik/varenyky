@@ -24,13 +24,23 @@ export const sets: Pack[] = [
         id: "potatoes-mushrooms",
         type: "traditional",
     },
+
+    // potato cheese jalapeno
     {
-        icons: ["potato"],
-        name: "Potatoes",
-        description: "Ingredients: potato, dill, onion, salt, black pepper",
-        id: "potatoes",
-        type: "traditional",
+        name: "Potato + Cheese + Jalapeno",
+        description: "Ingredients: potato, old cheddar, jalapeno pepper, salt",
+        icons: ["potato", "pepper"],
+        id: "potato-cheese-jalapeno",
+        type: "western",
     },
+
+    // {
+    //     icons: ["potato"],
+    //     name: "Potatoes",
+    //     description: "Ingredients: potato, dill, onion, salt, black pepper",
+    //     id: "potatoes",
+    //     type: "traditional",
+    // },
     {
         icons: ["potato", "liver"],
         name: "Potatoes + Liver",
@@ -39,10 +49,10 @@ export const sets: Pack[] = [
         type: "traditional",
     },
     {
-        icons: ["pepperoni"],
-        name: "Pizza Varennyk",
-        description: "Ingredients: pepperoni, mozzarella cheese, old fort cheddar, tomatoes",
-        id: "pizza-varennyk",
+        icons: ["potato", "beacon"],
+        name: "Potatoes + Beacon",
+        description: "Ingredients: potato, beacon, onion powder, salt",
+        id: "potatoes-bacon",
         type: "western",
     },
     {
@@ -66,12 +76,31 @@ export const sets: Pack[] = [
         id: "cabbage-liver",
         type: "traditional",
     },
+
+
+
     {
         icons: ["cherries"],
         name: "Varenyk with Cherries",
         description: "Ingredients: cherries, brown sugar, almond extract",
         id: "cherries",
-        type: "western",
+        type: "sweet",
+        sweet: true,
+    },
+    {
+        icons: ["blueberry"],
+        name: "Varenyk with Blueberries",
+        description: "Ingredients: blueberries, brown sugar, lemon peel",
+        id: "bluberries",
+        type: "sweet",
+        sweet: true,
+    },
+    {
+        icons: ["strawberry"],
+        name: "Varenyk with Strawberries",
+        description: "Ingredients: strawberries, brown sugar, vanilla",
+        id: "strawberries",
+        type: "sweet",
         sweet: true,
     },
     {
@@ -79,9 +108,26 @@ export const sets: Pack[] = [
         name: "Ricotta Varenyk",
         description: "Ingredients: ricotta, brown sugar, vanilla",
         id: "ricotta",
-        type: "western",
+        type: "sweet",
         sweet: true,
-    }
+    },
+
+
+
+    {
+        name: "Taco Varennyk",
+        icons: ["taco"],
+        description: "Ingredients: ground beef, cheddar cheese, onion powder, chili powder, paprika, garlic powder, oregano, salt",
+        id: "taco-varennyk",
+        type: "western"
+    },
+    {
+        icons: ["pepperoni"],
+        name: "Pizza Varennyk",
+        description: "Ingredients: pepperoni, mozzarella cheese, old fort cheddar, tomatoes",
+        id: "pizza-varennyk",
+        type: "western",
+    },
 ];
 
 

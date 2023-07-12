@@ -8,6 +8,9 @@ import { join } from 'path';
 import { AppServerModule } from './../main.server';
 
 import { ProductsRouter } from './routers/products';
+import { OrdersRouter } from './routers/orders';
+import client from './mongodb';
+
 
 // The Express app is exported so that it can be used by serverless Functions.
 export function app(): express.Express {
@@ -23,9 +26,12 @@ export function app(): express.Express {
     server.set('view engine', 'html');
     server.set('views', distFolder);
 
+    server.use(express.json());
+    server.use(express.urlencoded({ extended: true }));
 
 
     server.use("/api/products", ProductsRouter);
+    server.use("/api/orders", OrdersRouter);
 
 
     // Example Express Rest API endpoints
@@ -43,8 +49,15 @@ export function app(): express.Express {
     return server;
 }
 
-function run(): void {
+async function run(): Promise<void> {
     const port = process.env['PORT'] || 4000;
+
+    try {
+        // Connect to mongodb
+        await client.connect();
+    } catch (e) {
+        console.error(e);
+    }
 
     // Start up the Node server
     const server = app();

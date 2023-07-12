@@ -7,9 +7,7 @@ const router = Router();
 
 
 router.get("/", async (req, res) => {
-
     res.send(products);
-
 });
 
 

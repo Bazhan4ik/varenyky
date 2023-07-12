@@ -74,7 +74,7 @@ export class HomePage implements OnInit {
             component.destroy();
             if (submitted) {
                 this.selected = [];
-                // localStorage.removeItem('cart');
+                localStorage.removeItem('cart');
             }
         });
     }

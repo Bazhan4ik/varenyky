@@ -1,10 +1,10 @@
-button:focus::before {
-    content: "";
-    position: absolute;
-    top: -4px; // border: 2px + offset: 2px
-    right: -4px; // border: 2px + offset: 2px
-    bottom: -4px; // border: 2px + offset: 2px
-    left: -4px; // border: 2px + offset: 2px
-    border: 2px solid red;
-    border-radius: 7px; // border—radius: 6px + offset: 1px
-}
+// button:focus::before {
+//     content: "";
+//     position: absolute;
+//     top: -4px; // border: 2px + offset: 2px
+//     right: -4px; // border: 2px + offset: 2px
+//     bottom: -4px; // border: 2px + offset: 2px
+//     left: -4px; // border: 2px + offset: 2px
+//     border: 2px solid red;
+//     border-radius: 7px; // border—radius: 6px + offset: 1px
+// }
