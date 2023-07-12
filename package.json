@@ -47,7 +47,7 @@
         "@angular/compiler-cli": "^16.0.0",
         "@angular/language-service": "^16.0.0",
         "@ionic/angular-toolkit": "^9.0.0",
-        "@nguniversal/builders": "^16.1.1",
+        "@nguniversal/builders": "^16.1.1"
     },
     "devDependencies": {
         "@types/dotenv": "^8.2.0",
