@@ -85,7 +85,8 @@
             }
         }
 
-        .amounts {
+        .amounts,
+        .prices {
             display: flex;
             align-items: center;
             margin-top: 8px;
@@ -97,13 +98,19 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                gap: 4px;
+                flex-direction: column;
                 font-family: var(--font-button);
                 font-size: 16px;
-                border-radius: 42px;
+                border-radius: 24px;
                 border: 2px solid rgb(var(--red));
                 color: black;
                 background: white;
                 position: relative;
+
+                p {
+                    margin: 0;
+                }
 
                 &.selected {
                     border: 2px solid white;

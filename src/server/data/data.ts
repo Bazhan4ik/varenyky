@@ -25,7 +25,6 @@ export const sets: Pack[] = [
         type: "traditional",
     },
 
-    // potato cheese jalapeno
     {
         name: "Potato + Cheese + Jalapeno",
         description: "Ingredients: potato, old cheddar, jalapeno pepper, salt",
@@ -74,6 +73,13 @@ export const sets: Pack[] = [
         name: "Cabbage + Liver",
         description: "Ingredients: cabbage, beef liver, onion powder",
         id: "cabbage-liver",
+        type: "traditional",
+    },
+    {
+        icons: ["chicken"],
+        name: "Meat",
+        description: "Ingredients: ground turkey, onion powder, rosemary, onion powder, salt",
+        id: "meat",
         type: "traditional",
     },
 
