@@ -12,14 +12,14 @@ interface Pack {
 export const sets: Pack[] = [
     {
         icons: ["potato", "cheese"],
-        name: "Cheese + Potatoes",
+        name: "Potato + Cheese",
         description: "Ingredients: potato, old fort cheddar, salt",
         id: "cheese-potatoes",
         type: "traditional",
     },
     {
         icons: ["potato", "mushroom"],
-        name: "Potatoes + Mushrooms",
+        name: "Potato + Mushroom",
         description: "Ingredients: potato, champions, butter, garlic powder",
         id: "potatoes-mushrooms",
         type: "traditional",
@@ -42,14 +42,14 @@ export const sets: Pack[] = [
     // },
     {
         icons: ["potato", "liver"],
-        name: "Potatoes + Liver",
+        name: "Potato + Liver",
         description: "Ingredients: potato, beef liver, onion powder, salt",
         id: "potatoes-beef",
         type: "traditional",
     },
     {
         icons: ["potato", "beacon"],
-        name: "Potatoes + Beacon",
+        name: "Potato + Beacon",
         description: "Ingredients: potato, beacon, onion powder, salt",
         id: "potatoes-bacon",
         type: "western",
