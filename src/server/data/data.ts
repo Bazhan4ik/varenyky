@@ -87,7 +87,7 @@ export const sets: Pack[] = [
 
     {
         icons: ["cherries"],
-        name: "Varenyk with Cherries",
+        name: "Cherry Varenyky",
         description: "Ingredients: cherries, brown sugar, almond extract",
         id: "cherries",
         type: "sweet",
@@ -95,7 +95,7 @@ export const sets: Pack[] = [
     },
     {
         icons: ["blueberry"],
-        name: "Varenyk with Blueberries",
+        name: "Blueberry Varenyky",
         description: "Ingredients: blueberries, brown sugar, lemon peel",
         id: "bluberries",
         type: "sweet",
@@ -103,7 +103,7 @@ export const sets: Pack[] = [
     },
     {
         icons: ["strawberry"],
-        name: "Varenyk with Strawberries",
+        name: "Strawberry Varenyky",
         description: "Ingredients: strawberries, brown sugar, vanilla",
         id: "strawberries",
         type: "sweet",
@@ -111,7 +111,7 @@ export const sets: Pack[] = [
     },
     {
         icons: ["ricotta"],
-        name: "Ricotta Varenyk",
+        name: "Ricotta Varenyky",
         description: "Ingredients: ricotta, brown sugar, vanilla",
         id: "ricotta",
         type: "sweet",
@@ -121,7 +121,7 @@ export const sets: Pack[] = [
 
 
     {
-        name: "Taco Varennyk",
+        name: "Taco Varenyky",
         icons: ["taco"],
         description: "Ingredients: ground beef, cheddar cheese, onion powder, chili powder, paprika, garlic powder, oregano, salt",
         id: "taco-varennyk",
@@ -129,7 +129,7 @@ export const sets: Pack[] = [
     },
     {
         icons: ["pepperoni"],
-        name: "Pizza Varennyk",
+        name: "Pizza Varenyky",
         description: "Ingredients: pepperoni, mozzarella cheese, old fort cheddar, tomatoes",
         id: "pizza-varennyk",
         type: "western",
