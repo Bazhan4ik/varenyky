@@ -74,15 +74,9 @@
         </div>
 
         <div class="submit">
-            <div class="amount">
-                <p>{{ name }}</p>
-            </div>
-            <div class="amount">
-                <p>, {{ amount }} pcs</p>
-            </div>
-            <div class="price">
-                <p>, ${{ price }}</p>
-            </div>
+            <p>
+                {{ name }}, {{ amount }} pcs, ${{ price }}
+            </p>
             <button (click)="submit()">Submit</button>
         </div>
     </div>
