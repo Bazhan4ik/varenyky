@@ -85,7 +85,6 @@ export class SubmitModal implements OnInit {
         }
     }
     async submit() {
-        console.log(this.phone, this.type, this.city, this.unit, this.address, this.name);
 
         if (!this.phone || this.phone.length != 14 || !this.name) {
             return;

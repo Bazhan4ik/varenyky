@@ -15,7 +15,7 @@ router.post("/submit", async (req, res) => {
     }
 
     if (type == "delivery") {
-        if (!city || !address || !unit) {
+        if (!city || !address) {
             res.status(400).send("Missing parameters");
         }
 
