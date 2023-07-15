@@ -34,7 +34,7 @@ router.post("/submit", async (req, res) => {
     }
 
 
-    const result = await sendEmail("bazhantt@gmail.com", "NEW VARENYKY ORDER", "Check the website!");
+    const result = await sendEmail("varenyky.onthelake@gmail.com", "NEW VARENYKY ORDER", "Check the website!");
 
 
     res.send({ success: result == 1 });
