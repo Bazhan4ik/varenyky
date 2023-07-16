@@ -19,7 +19,7 @@ export const sets: Pack[] = [
     },
     {
         icons: ["potato", "mushroom"],
-        name: "Potato + Mushroom",
+        name: "Potato + Mushrooms",
         description: "Ingredients: potato, champions, butter, garlic powder",
         id: "potatoes-mushrooms",
         type: "traditional",
