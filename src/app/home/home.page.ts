@@ -70,6 +70,8 @@ export class HomePage implements OnInit {
     orderConfirmation() {
         const component = this.modalContainer.createComponent(SubmitModal);
 
+        component.instance.items = this.selected;
+
         component.instance.leave.subscribe((submitted: boolean) => {
             component.destroy();
             if (submitted) {

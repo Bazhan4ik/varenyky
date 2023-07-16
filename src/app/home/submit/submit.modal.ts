@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { firstValueFrom } from 'rxjs';
 
 @Component({
@@ -21,6 +21,7 @@ export class SubmitModal implements OnInit {
     name: string = "";
 
 
+    @Input() items!: any[];
     @Output() leave = new EventEmitter();
 
 
@@ -95,20 +96,29 @@ export class SubmitModal implements OnInit {
                 return;
             }
 
-            const result: any = await firstValueFrom(
-                this.http.post("/api/orders/submit", { address: this.address, unit: this.unit, city: this.city, phone: this.phone, name: this.name, type: "delivery" })
-            );
+            try {
+                const result: any = await firstValueFrom(
+                    this.http.post("/api/orders/submit", { items: this.items, address: this.address, unit: this.unit, city: this.city, phone: this.phone, name: this.name, type: "delivery" })
+                );
 
-            if (result.success) {
-                this.leave.emit(true);
+                if (result.success) {
+                    this.leave.emit(true);
+                }
+            } catch (e: any) {
+                console.error("ERROR =======> ", e.error.reason);
             }
-        } else {
-            const result: any = await firstValueFrom(
-                this.http.post("/api/orders/submit", { phone: this.phone, name: this.name, type: "pickup" })
-            );
 
-            if (result.success) {
-                this.leave.emit(true);
+        } else {
+            try {
+                const result: any = await firstValueFrom(
+                    this.http.post("/api/orders/submit", { items: this.items, phone: this.phone, name: this.name, type: "pickup" })
+                );
+
+                if (result.success) {
+                    this.leave.emit(true);
+                }
+            } catch (e: any) {
+                console.error("ERROR =======> ", e.error.reason);
             }
         }
 
