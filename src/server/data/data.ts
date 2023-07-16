@@ -15,7 +15,7 @@ export const sets: Pack[] = [
         name: "Potato + Cheese",
         description: "Ingredients: potato, old fort cheddar, salt",
         id: "cheese-potatoes",
-        type: "traditional",
+        type: "western",
     },
     {
         icons: ["potato", "mushroom"],
