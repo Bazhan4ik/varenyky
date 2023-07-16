@@ -1,0 +1,43 @@
+<div class="app">
+    <div class="list">
+        <div *ngFor="let order of orders" class="order">
+            <div class="name-type">
+                <p>{{ order.name }}</p>
+                <p class="type">{{ order.type }}</p>
+            </div>
+            <div class="phone">
+                <p>{{ order.phone }}</p>
+            </div>
+            <div *ngIf="order.type == 'delivery'" class="address">
+                <p>{{ order.address?.city }}, {{ order.address?.address }}, unit: {{ order.address?.unit }}</p>
+            </div>
+            <div class="total">
+                <p>Total: ${{ order.total }}</p>
+            </div>
+            <div class="date">
+                <p>
+                    Ordered: {{ order.date }}
+                </p>
+            </div>
+
+            <div class="items">
+                <div class="item" *ngFor="let item of order.items">
+                    <div class="name">
+                        <p>{{ item.name }}</p>
+                    </div>
+                    <div class="amount">
+                        <p>{{ item.amount }} pcs.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="buttons">
+                <button class="remove" (click)="setStatus('removed', order._id)">remove</button>
+                <button class="done" (click)="setStatus('done', order._id)">done</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<ng-container #modalContainer></ng-container>
