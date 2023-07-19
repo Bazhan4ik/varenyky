@@ -19,6 +19,12 @@
             </div>
             <input type="text" name="name" placeholder="Your Name" [(ngModel)]="name">
         </div>
+        <div class="inpt name">
+            <div class="label">
+                <p>Email address</p>
+            </div>
+            <input type="email" name="email" placeholder="Your Email" [(ngModel)]="email">
+        </div>
         <div class="phone">
             <div class="prefix">
                 <p>+1</p>
@@ -60,7 +66,7 @@
         </div>
 
         <div class="buttons">
-            <button (click)="submit()">Place order</button>
+            <button (click)="submit()" [disabled]="disable">Place order</button>
         </div>
     </div>
 </div>

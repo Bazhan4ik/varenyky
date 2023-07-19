@@ -19,6 +19,10 @@ export class SubmitModal implements OnInit {
     unit: string = "";
     phone: string = "";
     name: string = "";
+    email: string = "";
+
+
+    disable = false;
 
 
     @Input() items!: any[];
@@ -87,18 +91,21 @@ export class SubmitModal implements OnInit {
     }
     async submit() {
 
-        if (!this.phone || this.phone.length != 14 || !this.name) {
+        if (!this.phone || this.phone.length != 14 || !this.name || !this.email) {
             return;
         }
 
+        this.disable = true;
+
         if (this.type == "delivery") {
             if (!this.address || !this.city) {
+                this.disable = false;
                 return;
             }
 
             try {
                 const result: any = await firstValueFrom(
-                    this.http.post("/api/orders/submit", { items: this.items, address: this.address, unit: this.unit, city: this.city, phone: this.phone, name: this.name, type: "delivery" })
+                    this.http.post("/api/orders/submit", { items: this.items, email: this.email, address: this.address, unit: this.unit, city: this.city, phone: this.phone, name: this.name, type: "delivery" })
                 );
 
                 if (result.success) {
@@ -106,12 +113,13 @@ export class SubmitModal implements OnInit {
                 }
             } catch (e: any) {
                 console.error("ERROR =======> ", e.error.reason);
+                this.disable = false;
             }
 
         } else {
             try {
                 const result: any = await firstValueFrom(
-                    this.http.post("/api/orders/submit", { items: this.items, phone: this.phone, name: this.name, type: "pickup" })
+                    this.http.post("/api/orders/submit", { items: this.items, email: this.email, phone: this.phone, name: this.name, type: "pickup" })
                 );
 
                 if (result.success) {
@@ -119,6 +127,7 @@ export class SubmitModal implements OnInit {
                 }
             } catch (e: any) {
                 console.error("ERROR =======> ", e.error.reason);
+                this.disable = false;
             }
         }
 

@@ -21,7 +21,7 @@ export const sets: Pack[] = [
         icons: ["potato", "mushroom"],
         name: "Potato + Mushrooms",
         description: "Ingredients: potato, champions, butter, garlic powder",
-        id: "potatoes-mushrooms",
+        id: "potato-mushrooms",
         type: "traditional",
     },
 
@@ -44,14 +44,14 @@ export const sets: Pack[] = [
         icons: ["potato", "liver"],
         name: "Potato + Liver",
         description: "Ingredients: potato, beef liver, onion powder, salt",
-        id: "potatoes-beef",
+        id: "potato-liver",
         type: "traditional",
     },
     {
         icons: ["potato", "beacon"],
         name: "Potato + Beacon",
         description: "Ingredients: potato, beacon, onion powder, salt",
-        id: "potatoes-bacon",
+        id: "potatoes-beacon",
         type: "western",
     },
     {

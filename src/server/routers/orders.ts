@@ -3,7 +3,7 @@ import client from "../mongodb";
 import { randomBytes } from "crypto";
 import { sets } from "../data/data";
 import { ObjectId } from "mongodb";
-import { sendEmail } from "../email";
+import { isValidEmail, sendEmail } from "../email";
 
 
 const router = Router();
@@ -11,9 +11,9 @@ let ctoken = "";
 
 
 router.post("/submit", async (req, res) => {
-    const { city, address, unit, phone, name, type, items } = req.body;
+    const { city, address, unit, phone, email, name, type, items } = req.body;
 
-    if (!phone || !name || !type || !items || !Array.isArray(items)) {
+    if (!phone || !name || !type || !items || !email || !isValidEmail(email) || !Array.isArray(items)) {
         res.status(400).send({ reason: "MissingParameters" });
     }
 
@@ -47,6 +47,15 @@ ${items.map((item: any) => `${item.amount} ${item.id}`).join(", ")}
 `
 
     );
+
+
+    let message = "Thanks for ordering varenyky! We'll be waiting for you to pick up your varenyky! \n \n You can check how to cook the varenyky <a href='varenykyonthelake.com'>here</a> ";
+
+    if (type == "delivery") {
+        message = "Thanks for ordering varenyky! We'll contact you shortly when your varenyky will be delivered! \n \n You can check how to cook the varenyky <a href='varenykyonthelake.com'>here</a>";
+    }
+
+    const confirmation = await sendEmail(email, "Thanks for ordering varenyky!", message);
 
 
     res.send({ success: result == 1 });
