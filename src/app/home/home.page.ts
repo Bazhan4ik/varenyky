@@ -31,6 +31,7 @@ export class HomePage implements OnInit {
     priceString = "30 pcs, ≈600g, $30";
     selected: { id: string; amount: number; }[] = [];
     tab = "traditional";
+    showRest = false;
 
 
     @ViewChild("modalContainer", { read: ViewContainerRef }) modalContainer!: ViewContainerRef;

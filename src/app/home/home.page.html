@@ -39,6 +39,30 @@
                 <div class="circle red c3"></div>
             </div>
         </div>
+        <!-- <div class="top">
+            <div class="card-wrap">
+                <div class="card">
+                    <div class="titles">
+                        <h1>Our story</h1>
+                        <h2>While you are reading this you're getting more and more bored and chances that you will
+                            close the websites are bigger and bigger.</h2>
+                    </div>
+                    <div class="buttons">
+                        <button class="cook" (click)="cook()">How to cook</button>
+                        <button class="cart" (click)="openCart()">
+                            <ion-icon name="cart-outline"></ion-icon>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="image-wrap">
+                <img src="./../../assets/images/header-plate.png" alt="plate">
+                <div class="circle"></div>
+                <div class="circle red c1"></div>
+                <div class="circle red c2"></div>
+                <div class="circle red c3"></div>
+            </div>
+        </div> -->
 
         <div class="tabs">
             <button class="left" [class.selected]="tab == 'traditional'"
@@ -74,6 +98,39 @@
                     <img *ngFor="let emoji of product.icons" src="./../../assets/emoji/{{emoji}}.png" alt="">
                 </div>
             </div>
+        </div>
+
+        <div class="story">
+            <h3>My Story</h3>
+
+            <p>
+                Hi there!
+                I would like to introduce myself to you. My name is Valentyna, I came to Canada from Ukraine, Kyiv in
+                the spring of 2022 and got very lucky to end up here, in beautiful Niagara-on-the-Lake.
+            </p>
+            <p>
+                I started to make and sell Ukrainian traditional VARENYKY<span *ngIf="!showRest">...</span> <button
+                    *ngIf="!showRest" (click)="showRest = true">Continue reading</button> <span *ngIf="showRest"> We
+                    call them VARENYKY
+                    because in Ukrainian
+                    "TO BOIL" translates as "VARYTY" (варити).</span>
+            </p>
+            <p *ngIf="showRest">
+                Back there, in my grandma's kitchen, we often got together and made them from scratch. Children,
+                grandchildren -- for our
+                family, we needed to make 100-150 pieces per night, boil them, add fried onion with bacon, and sour
+                cream on top.
+            </p>
+            <p *ngIf="showRest">
+                Now, when I and many other Ukrainians do not have the opportunity to gather and cook for their families
+                at home, I started to do it here, in Canada. For my friends: Canadians, Ukrainians, Irish, Polish,
+                Indian, Scottish, French, German, Italian, Chinese, English, Dutch, Portuguese, and others.
+            </p>
+            <p *ngIf="showRest">
+                The most important thing is that I want to share our culture and show a piece of Ukraine to the world
+                through
+                food. It is very important to talk about my country, so I decided to do it this way.
+            </p>
         </div>
 
         <div class="qna">

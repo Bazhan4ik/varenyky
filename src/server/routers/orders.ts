@@ -49,10 +49,10 @@ ${items.map((item: any) => `${item.amount} ${item.id}`).join(", ")}
     );
 
 
-    let message = "Thanks for ordering varenyky! We'll be waiting for you to pick up your varenyky! \n \n You can check how to cook the varenyky <a href='varenykyonthelake.com'>here</a> ";
+    let message = "Thanks for ordering varenyky! We will contact you shortly to pick a time for pickup, or you can call us with any questions on +1 (289) 968 8603! \n \n You can check how to cook the varenyky <a href='varenykyonthelake.com'>here</a>";
 
     if (type == "delivery") {
-        message = "Thanks for ordering varenyky! We'll contact you shortly when your varenyky will be delivered! \n \n You can check how to cook the varenyky <a href='varenykyonthelake.com'>here</a>";
+        message = "Thanks for ordering varenyky! We'll contact you shortly when your varenyky will be delivered, or you can call us with any questions on +1 (289) 968 8603!! \n \n You can check how to cook the varenyky <a href='varenykyonthelake.com'>here</a>";
     }
 
     const confirmation = await sendEmail(email, "Thanks for ordering varenyky!", message);

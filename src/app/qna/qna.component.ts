@@ -48,7 +48,11 @@ export class QnaComponent implements OnInit {
         {
             title: "How can I contact you?",
             answer: "Phone number: +1 (289) 968 8603, email address: varenyky.onthelake@gmail.com"
-        }
+        },
+        {
+            title: "How can I pay?",
+            answer: "Payment happens when you're picking up the varenyky. You can pay with cash or e-transfer."
+        },
     ];
 
 
